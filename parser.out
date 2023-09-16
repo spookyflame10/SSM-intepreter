@@ -1,0 +1,604 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> program
+Rule 1     program -> instructions
+Rule 2     instructions -> instruction
+Rule 3     instructions -> instructions instruction
+Rule 4     instructions -> instructions LABEL
+Rule 5     instruction -> ILDC NUMBER
+Rule 6     instruction -> IADD
+Rule 7     instruction -> ISUB
+Rule 8     instruction -> IMUL
+Rule 9     instruction -> IDIV
+Rule 10    instruction -> IMOD
+Rule 11    instruction -> POP
+Rule 12    instruction -> DUP
+Rule 13    instruction -> SWAP
+Rule 14    instruction -> JZ LABEL
+Rule 15    instruction -> JNZ LABEL
+Rule 16    instruction -> JMP LABEL
+Rule 17    instruction -> LOAD
+Rule 18    instruction -> STORE
+Rule 19    instruction -> LABEL
+
+Terminals, with rules where they appear
+
+DUP                  : 12
+IADD                 : 6
+IDIV                 : 9
+ILDC                 : 5
+IMOD                 : 10
+IMUL                 : 8
+ISUB                 : 7
+JMP                  : 16
+JNZ                  : 15
+JZ                   : 14
+LABEL                : 4 14 15 16 19
+LOAD                 : 17
+NUMBER               : 5
+POP                  : 11
+STORE                : 18
+SWAP                 : 13
+error                : 
+
+Nonterminals, with rules where they appear
+
+instruction          : 2 3
+instructions         : 1 3 4
+program              : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . program
+    (1) program -> . instructions
+    (2) instructions -> . instruction
+    (3) instructions -> . instructions instruction
+    (4) instructions -> . instructions LABEL
+    (5) instruction -> . ILDC NUMBER
+    (6) instruction -> . IADD
+    (7) instruction -> . ISUB
+    (8) instruction -> . IMUL
+    (9) instruction -> . IDIV
+    (10) instruction -> . IMOD
+    (11) instruction -> . POP
+    (12) instruction -> . DUP
+    (13) instruction -> . SWAP
+    (14) instruction -> . JZ LABEL
+    (15) instruction -> . JNZ LABEL
+    (16) instruction -> . JMP LABEL
+    (17) instruction -> . LOAD
+    (18) instruction -> . STORE
+    (19) instruction -> . LABEL
+
+    ILDC            shift and go to state 5
+    IADD            shift and go to state 6
+    ISUB            shift and go to state 7
+    IMUL            shift and go to state 8
+    IDIV            shift and go to state 9
+    IMOD            shift and go to state 10
+    POP             shift and go to state 11
+    DUP             shift and go to state 12
+    SWAP            shift and go to state 13
+    JZ              shift and go to state 14
+    JNZ             shift and go to state 15
+    JMP             shift and go to state 16
+    LOAD            shift and go to state 17
+    STORE           shift and go to state 18
+    LABEL           shift and go to state 4
+
+    program                        shift and go to state 1
+    instructions                   shift and go to state 2
+    instruction                    shift and go to state 3
+
+state 1
+
+    (0) S' -> program .
+
+
+
+state 2
+
+    (1) program -> instructions .
+    (3) instructions -> instructions . instruction
+    (4) instructions -> instructions . LABEL
+    (5) instruction -> . ILDC NUMBER
+    (6) instruction -> . IADD
+    (7) instruction -> . ISUB
+    (8) instruction -> . IMUL
+    (9) instruction -> . IDIV
+    (10) instruction -> . IMOD
+    (11) instruction -> . POP
+    (12) instruction -> . DUP
+    (13) instruction -> . SWAP
+    (14) instruction -> . JZ LABEL
+    (15) instruction -> . JNZ LABEL
+    (16) instruction -> . JMP LABEL
+    (17) instruction -> . LOAD
+    (18) instruction -> . STORE
+    (19) instruction -> . LABEL
+
+    $end            reduce using rule 1 (program -> instructions .)
+    LABEL           shift and go to state 20
+    ILDC            shift and go to state 5
+    IADD            shift and go to state 6
+    ISUB            shift and go to state 7
+    IMUL            shift and go to state 8
+    IDIV            shift and go to state 9
+    IMOD            shift and go to state 10
+    POP             shift and go to state 11
+    DUP             shift and go to state 12
+    SWAP            shift and go to state 13
+    JZ              shift and go to state 14
+    JNZ             shift and go to state 15
+    JMP             shift and go to state 16
+    LOAD            shift and go to state 17
+    STORE           shift and go to state 18
+
+    instruction                    shift and go to state 19
+
+state 3
+
+    (2) instructions -> instruction .
+
+    LABEL           reduce using rule 2 (instructions -> instruction .)
+    ILDC            reduce using rule 2 (instructions -> instruction .)
+    IADD            reduce using rule 2 (instructions -> instruction .)
+    ISUB            reduce using rule 2 (instructions -> instruction .)
+    IMUL            reduce using rule 2 (instructions -> instruction .)
+    IDIV            reduce using rule 2 (instructions -> instruction .)
+    IMOD            reduce using rule 2 (instructions -> instruction .)
+    POP             reduce using rule 2 (instructions -> instruction .)
+    DUP             reduce using rule 2 (instructions -> instruction .)
+    SWAP            reduce using rule 2 (instructions -> instruction .)
+    JZ              reduce using rule 2 (instructions -> instruction .)
+    JNZ             reduce using rule 2 (instructions -> instruction .)
+    JMP             reduce using rule 2 (instructions -> instruction .)
+    LOAD            reduce using rule 2 (instructions -> instruction .)
+    STORE           reduce using rule 2 (instructions -> instruction .)
+    $end            reduce using rule 2 (instructions -> instruction .)
+
+
+state 4
+
+    (19) instruction -> LABEL .
+
+    LABEL           reduce using rule 19 (instruction -> LABEL .)
+    ILDC            reduce using rule 19 (instruction -> LABEL .)
+    IADD            reduce using rule 19 (instruction -> LABEL .)
+    ISUB            reduce using rule 19 (instruction -> LABEL .)
+    IMUL            reduce using rule 19 (instruction -> LABEL .)
+    IDIV            reduce using rule 19 (instruction -> LABEL .)
+    IMOD            reduce using rule 19 (instruction -> LABEL .)
+    POP             reduce using rule 19 (instruction -> LABEL .)
+    DUP             reduce using rule 19 (instruction -> LABEL .)
+    SWAP            reduce using rule 19 (instruction -> LABEL .)
+    JZ              reduce using rule 19 (instruction -> LABEL .)
+    JNZ             reduce using rule 19 (instruction -> LABEL .)
+    JMP             reduce using rule 19 (instruction -> LABEL .)
+    LOAD            reduce using rule 19 (instruction -> LABEL .)
+    STORE           reduce using rule 19 (instruction -> LABEL .)
+    $end            reduce using rule 19 (instruction -> LABEL .)
+
+
+state 5
+
+    (5) instruction -> ILDC . NUMBER
+
+    NUMBER          shift and go to state 21
+
+
+state 6
+
+    (6) instruction -> IADD .
+
+    LABEL           reduce using rule 6 (instruction -> IADD .)
+    ILDC            reduce using rule 6 (instruction -> IADD .)
+    IADD            reduce using rule 6 (instruction -> IADD .)
+    ISUB            reduce using rule 6 (instruction -> IADD .)
+    IMUL            reduce using rule 6 (instruction -> IADD .)
+    IDIV            reduce using rule 6 (instruction -> IADD .)
+    IMOD            reduce using rule 6 (instruction -> IADD .)
+    POP             reduce using rule 6 (instruction -> IADD .)
+    DUP             reduce using rule 6 (instruction -> IADD .)
+    SWAP            reduce using rule 6 (instruction -> IADD .)
+    JZ              reduce using rule 6 (instruction -> IADD .)
+    JNZ             reduce using rule 6 (instruction -> IADD .)
+    JMP             reduce using rule 6 (instruction -> IADD .)
+    LOAD            reduce using rule 6 (instruction -> IADD .)
+    STORE           reduce using rule 6 (instruction -> IADD .)
+    $end            reduce using rule 6 (instruction -> IADD .)
+
+
+state 7
+
+    (7) instruction -> ISUB .
+
+    LABEL           reduce using rule 7 (instruction -> ISUB .)
+    ILDC            reduce using rule 7 (instruction -> ISUB .)
+    IADD            reduce using rule 7 (instruction -> ISUB .)
+    ISUB            reduce using rule 7 (instruction -> ISUB .)
+    IMUL            reduce using rule 7 (instruction -> ISUB .)
+    IDIV            reduce using rule 7 (instruction -> ISUB .)
+    IMOD            reduce using rule 7 (instruction -> ISUB .)
+    POP             reduce using rule 7 (instruction -> ISUB .)
+    DUP             reduce using rule 7 (instruction -> ISUB .)
+    SWAP            reduce using rule 7 (instruction -> ISUB .)
+    JZ              reduce using rule 7 (instruction -> ISUB .)
+    JNZ             reduce using rule 7 (instruction -> ISUB .)
+    JMP             reduce using rule 7 (instruction -> ISUB .)
+    LOAD            reduce using rule 7 (instruction -> ISUB .)
+    STORE           reduce using rule 7 (instruction -> ISUB .)
+    $end            reduce using rule 7 (instruction -> ISUB .)
+
+
+state 8
+
+    (8) instruction -> IMUL .
+
+    LABEL           reduce using rule 8 (instruction -> IMUL .)
+    ILDC            reduce using rule 8 (instruction -> IMUL .)
+    IADD            reduce using rule 8 (instruction -> IMUL .)
+    ISUB            reduce using rule 8 (instruction -> IMUL .)
+    IMUL            reduce using rule 8 (instruction -> IMUL .)
+    IDIV            reduce using rule 8 (instruction -> IMUL .)
+    IMOD            reduce using rule 8 (instruction -> IMUL .)
+    POP             reduce using rule 8 (instruction -> IMUL .)
+    DUP             reduce using rule 8 (instruction -> IMUL .)
+    SWAP            reduce using rule 8 (instruction -> IMUL .)
+    JZ              reduce using rule 8 (instruction -> IMUL .)
+    JNZ             reduce using rule 8 (instruction -> IMUL .)
+    JMP             reduce using rule 8 (instruction -> IMUL .)
+    LOAD            reduce using rule 8 (instruction -> IMUL .)
+    STORE           reduce using rule 8 (instruction -> IMUL .)
+    $end            reduce using rule 8 (instruction -> IMUL .)
+
+
+state 9
+
+    (9) instruction -> IDIV .
+
+    LABEL           reduce using rule 9 (instruction -> IDIV .)
+    ILDC            reduce using rule 9 (instruction -> IDIV .)
+    IADD            reduce using rule 9 (instruction -> IDIV .)
+    ISUB            reduce using rule 9 (instruction -> IDIV .)
+    IMUL            reduce using rule 9 (instruction -> IDIV .)
+    IDIV            reduce using rule 9 (instruction -> IDIV .)
+    IMOD            reduce using rule 9 (instruction -> IDIV .)
+    POP             reduce using rule 9 (instruction -> IDIV .)
+    DUP             reduce using rule 9 (instruction -> IDIV .)
+    SWAP            reduce using rule 9 (instruction -> IDIV .)
+    JZ              reduce using rule 9 (instruction -> IDIV .)
+    JNZ             reduce using rule 9 (instruction -> IDIV .)
+    JMP             reduce using rule 9 (instruction -> IDIV .)
+    LOAD            reduce using rule 9 (instruction -> IDIV .)
+    STORE           reduce using rule 9 (instruction -> IDIV .)
+    $end            reduce using rule 9 (instruction -> IDIV .)
+
+
+state 10
+
+    (10) instruction -> IMOD .
+
+    LABEL           reduce using rule 10 (instruction -> IMOD .)
+    ILDC            reduce using rule 10 (instruction -> IMOD .)
+    IADD            reduce using rule 10 (instruction -> IMOD .)
+    ISUB            reduce using rule 10 (instruction -> IMOD .)
+    IMUL            reduce using rule 10 (instruction -> IMOD .)
+    IDIV            reduce using rule 10 (instruction -> IMOD .)
+    IMOD            reduce using rule 10 (instruction -> IMOD .)
+    POP             reduce using rule 10 (instruction -> IMOD .)
+    DUP             reduce using rule 10 (instruction -> IMOD .)
+    SWAP            reduce using rule 10 (instruction -> IMOD .)
+    JZ              reduce using rule 10 (instruction -> IMOD .)
+    JNZ             reduce using rule 10 (instruction -> IMOD .)
+    JMP             reduce using rule 10 (instruction -> IMOD .)
+    LOAD            reduce using rule 10 (instruction -> IMOD .)
+    STORE           reduce using rule 10 (instruction -> IMOD .)
+    $end            reduce using rule 10 (instruction -> IMOD .)
+
+
+state 11
+
+    (11) instruction -> POP .
+
+    LABEL           reduce using rule 11 (instruction -> POP .)
+    ILDC            reduce using rule 11 (instruction -> POP .)
+    IADD            reduce using rule 11 (instruction -> POP .)
+    ISUB            reduce using rule 11 (instruction -> POP .)
+    IMUL            reduce using rule 11 (instruction -> POP .)
+    IDIV            reduce using rule 11 (instruction -> POP .)
+    IMOD            reduce using rule 11 (instruction -> POP .)
+    POP             reduce using rule 11 (instruction -> POP .)
+    DUP             reduce using rule 11 (instruction -> POP .)
+    SWAP            reduce using rule 11 (instruction -> POP .)
+    JZ              reduce using rule 11 (instruction -> POP .)
+    JNZ             reduce using rule 11 (instruction -> POP .)
+    JMP             reduce using rule 11 (instruction -> POP .)
+    LOAD            reduce using rule 11 (instruction -> POP .)
+    STORE           reduce using rule 11 (instruction -> POP .)
+    $end            reduce using rule 11 (instruction -> POP .)
+
+
+state 12
+
+    (12) instruction -> DUP .
+
+    LABEL           reduce using rule 12 (instruction -> DUP .)
+    ILDC            reduce using rule 12 (instruction -> DUP .)
+    IADD            reduce using rule 12 (instruction -> DUP .)
+    ISUB            reduce using rule 12 (instruction -> DUP .)
+    IMUL            reduce using rule 12 (instruction -> DUP .)
+    IDIV            reduce using rule 12 (instruction -> DUP .)
+    IMOD            reduce using rule 12 (instruction -> DUP .)
+    POP             reduce using rule 12 (instruction -> DUP .)
+    DUP             reduce using rule 12 (instruction -> DUP .)
+    SWAP            reduce using rule 12 (instruction -> DUP .)
+    JZ              reduce using rule 12 (instruction -> DUP .)
+    JNZ             reduce using rule 12 (instruction -> DUP .)
+    JMP             reduce using rule 12 (instruction -> DUP .)
+    LOAD            reduce using rule 12 (instruction -> DUP .)
+    STORE           reduce using rule 12 (instruction -> DUP .)
+    $end            reduce using rule 12 (instruction -> DUP .)
+
+
+state 13
+
+    (13) instruction -> SWAP .
+
+    LABEL           reduce using rule 13 (instruction -> SWAP .)
+    ILDC            reduce using rule 13 (instruction -> SWAP .)
+    IADD            reduce using rule 13 (instruction -> SWAP .)
+    ISUB            reduce using rule 13 (instruction -> SWAP .)
+    IMUL            reduce using rule 13 (instruction -> SWAP .)
+    IDIV            reduce using rule 13 (instruction -> SWAP .)
+    IMOD            reduce using rule 13 (instruction -> SWAP .)
+    POP             reduce using rule 13 (instruction -> SWAP .)
+    DUP             reduce using rule 13 (instruction -> SWAP .)
+    SWAP            reduce using rule 13 (instruction -> SWAP .)
+    JZ              reduce using rule 13 (instruction -> SWAP .)
+    JNZ             reduce using rule 13 (instruction -> SWAP .)
+    JMP             reduce using rule 13 (instruction -> SWAP .)
+    LOAD            reduce using rule 13 (instruction -> SWAP .)
+    STORE           reduce using rule 13 (instruction -> SWAP .)
+    $end            reduce using rule 13 (instruction -> SWAP .)
+
+
+state 14
+
+    (14) instruction -> JZ . LABEL
+
+    LABEL           shift and go to state 22
+
+
+state 15
+
+    (15) instruction -> JNZ . LABEL
+
+    LABEL           shift and go to state 23
+
+
+state 16
+
+    (16) instruction -> JMP . LABEL
+
+    LABEL           shift and go to state 24
+
+
+state 17
+
+    (17) instruction -> LOAD .
+
+    LABEL           reduce using rule 17 (instruction -> LOAD .)
+    ILDC            reduce using rule 17 (instruction -> LOAD .)
+    IADD            reduce using rule 17 (instruction -> LOAD .)
+    ISUB            reduce using rule 17 (instruction -> LOAD .)
+    IMUL            reduce using rule 17 (instruction -> LOAD .)
+    IDIV            reduce using rule 17 (instruction -> LOAD .)
+    IMOD            reduce using rule 17 (instruction -> LOAD .)
+    POP             reduce using rule 17 (instruction -> LOAD .)
+    DUP             reduce using rule 17 (instruction -> LOAD .)
+    SWAP            reduce using rule 17 (instruction -> LOAD .)
+    JZ              reduce using rule 17 (instruction -> LOAD .)
+    JNZ             reduce using rule 17 (instruction -> LOAD .)
+    JMP             reduce using rule 17 (instruction -> LOAD .)
+    LOAD            reduce using rule 17 (instruction -> LOAD .)
+    STORE           reduce using rule 17 (instruction -> LOAD .)
+    $end            reduce using rule 17 (instruction -> LOAD .)
+
+
+state 18
+
+    (18) instruction -> STORE .
+
+    LABEL           reduce using rule 18 (instruction -> STORE .)
+    ILDC            reduce using rule 18 (instruction -> STORE .)
+    IADD            reduce using rule 18 (instruction -> STORE .)
+    ISUB            reduce using rule 18 (instruction -> STORE .)
+    IMUL            reduce using rule 18 (instruction -> STORE .)
+    IDIV            reduce using rule 18 (instruction -> STORE .)
+    IMOD            reduce using rule 18 (instruction -> STORE .)
+    POP             reduce using rule 18 (instruction -> STORE .)
+    DUP             reduce using rule 18 (instruction -> STORE .)
+    SWAP            reduce using rule 18 (instruction -> STORE .)
+    JZ              reduce using rule 18 (instruction -> STORE .)
+    JNZ             reduce using rule 18 (instruction -> STORE .)
+    JMP             reduce using rule 18 (instruction -> STORE .)
+    LOAD            reduce using rule 18 (instruction -> STORE .)
+    STORE           reduce using rule 18 (instruction -> STORE .)
+    $end            reduce using rule 18 (instruction -> STORE .)
+
+
+state 19
+
+    (3) instructions -> instructions instruction .
+
+    LABEL           reduce using rule 3 (instructions -> instructions instruction .)
+    ILDC            reduce using rule 3 (instructions -> instructions instruction .)
+    IADD            reduce using rule 3 (instructions -> instructions instruction .)
+    ISUB            reduce using rule 3 (instructions -> instructions instruction .)
+    IMUL            reduce using rule 3 (instructions -> instructions instruction .)
+    IDIV            reduce using rule 3 (instructions -> instructions instruction .)
+    IMOD            reduce using rule 3 (instructions -> instructions instruction .)
+    POP             reduce using rule 3 (instructions -> instructions instruction .)
+    DUP             reduce using rule 3 (instructions -> instructions instruction .)
+    SWAP            reduce using rule 3 (instructions -> instructions instruction .)
+    JZ              reduce using rule 3 (instructions -> instructions instruction .)
+    JNZ             reduce using rule 3 (instructions -> instructions instruction .)
+    JMP             reduce using rule 3 (instructions -> instructions instruction .)
+    LOAD            reduce using rule 3 (instructions -> instructions instruction .)
+    STORE           reduce using rule 3 (instructions -> instructions instruction .)
+    $end            reduce using rule 3 (instructions -> instructions instruction .)
+
+
+state 20
+
+    (4) instructions -> instructions LABEL .
+    (19) instruction -> LABEL .
+
+  ! reduce/reduce conflict for LABEL resolved using rule 4 (instructions -> instructions LABEL .)
+  ! reduce/reduce conflict for ILDC resolved using rule 4 (instructions -> instructions LABEL .)
+  ! reduce/reduce conflict for IADD resolved using rule 4 (instructions -> instructions LABEL .)
+  ! reduce/reduce conflict for ISUB resolved using rule 4 (instructions -> instructions LABEL .)
+  ! reduce/reduce conflict for IMUL resolved using rule 4 (instructions -> instructions LABEL .)
+  ! reduce/reduce conflict for IDIV resolved using rule 4 (instructions -> instructions LABEL .)
+  ! reduce/reduce conflict for IMOD resolved using rule 4 (instructions -> instructions LABEL .)
+  ! reduce/reduce conflict for POP resolved using rule 4 (instructions -> instructions LABEL .)
+  ! reduce/reduce conflict for DUP resolved using rule 4 (instructions -> instructions LABEL .)
+  ! reduce/reduce conflict for SWAP resolved using rule 4 (instructions -> instructions LABEL .)
+  ! reduce/reduce conflict for JZ resolved using rule 4 (instructions -> instructions LABEL .)
+  ! reduce/reduce conflict for JNZ resolved using rule 4 (instructions -> instructions LABEL .)
+  ! reduce/reduce conflict for JMP resolved using rule 4 (instructions -> instructions LABEL .)
+  ! reduce/reduce conflict for LOAD resolved using rule 4 (instructions -> instructions LABEL .)
+  ! reduce/reduce conflict for STORE resolved using rule 4 (instructions -> instructions LABEL .)
+  ! reduce/reduce conflict for $end resolved using rule 4 (instructions -> instructions LABEL .)
+    LABEL           reduce using rule 4 (instructions -> instructions LABEL .)
+    ILDC            reduce using rule 4 (instructions -> instructions LABEL .)
+    IADD            reduce using rule 4 (instructions -> instructions LABEL .)
+    ISUB            reduce using rule 4 (instructions -> instructions LABEL .)
+    IMUL            reduce using rule 4 (instructions -> instructions LABEL .)
+    IDIV            reduce using rule 4 (instructions -> instructions LABEL .)
+    IMOD            reduce using rule 4 (instructions -> instructions LABEL .)
+    POP             reduce using rule 4 (instructions -> instructions LABEL .)
+    DUP             reduce using rule 4 (instructions -> instructions LABEL .)
+    SWAP            reduce using rule 4 (instructions -> instructions LABEL .)
+    JZ              reduce using rule 4 (instructions -> instructions LABEL .)
+    JNZ             reduce using rule 4 (instructions -> instructions LABEL .)
+    JMP             reduce using rule 4 (instructions -> instructions LABEL .)
+    LOAD            reduce using rule 4 (instructions -> instructions LABEL .)
+    STORE           reduce using rule 4 (instructions -> instructions LABEL .)
+    $end            reduce using rule 4 (instructions -> instructions LABEL .)
+
+  ! LABEL           [ reduce using rule 19 (instruction -> LABEL .) ]
+  ! ILDC            [ reduce using rule 19 (instruction -> LABEL .) ]
+  ! IADD            [ reduce using rule 19 (instruction -> LABEL .) ]
+  ! ISUB            [ reduce using rule 19 (instruction -> LABEL .) ]
+  ! IMUL            [ reduce using rule 19 (instruction -> LABEL .) ]
+  ! IDIV            [ reduce using rule 19 (instruction -> LABEL .) ]
+  ! IMOD            [ reduce using rule 19 (instruction -> LABEL .) ]
+  ! POP             [ reduce using rule 19 (instruction -> LABEL .) ]
+  ! DUP             [ reduce using rule 19 (instruction -> LABEL .) ]
+  ! SWAP            [ reduce using rule 19 (instruction -> LABEL .) ]
+  ! JZ              [ reduce using rule 19 (instruction -> LABEL .) ]
+  ! JNZ             [ reduce using rule 19 (instruction -> LABEL .) ]
+  ! JMP             [ reduce using rule 19 (instruction -> LABEL .) ]
+  ! LOAD            [ reduce using rule 19 (instruction -> LABEL .) ]
+  ! STORE           [ reduce using rule 19 (instruction -> LABEL .) ]
+  ! $end            [ reduce using rule 19 (instruction -> LABEL .) ]
+
+
+state 21
+
+    (5) instruction -> ILDC NUMBER .
+
+    LABEL           reduce using rule 5 (instruction -> ILDC NUMBER .)
+    ILDC            reduce using rule 5 (instruction -> ILDC NUMBER .)
+    IADD            reduce using rule 5 (instruction -> ILDC NUMBER .)
+    ISUB            reduce using rule 5 (instruction -> ILDC NUMBER .)
+    IMUL            reduce using rule 5 (instruction -> ILDC NUMBER .)
+    IDIV            reduce using rule 5 (instruction -> ILDC NUMBER .)
+    IMOD            reduce using rule 5 (instruction -> ILDC NUMBER .)
+    POP             reduce using rule 5 (instruction -> ILDC NUMBER .)
+    DUP             reduce using rule 5 (instruction -> ILDC NUMBER .)
+    SWAP            reduce using rule 5 (instruction -> ILDC NUMBER .)
+    JZ              reduce using rule 5 (instruction -> ILDC NUMBER .)
+    JNZ             reduce using rule 5 (instruction -> ILDC NUMBER .)
+    JMP             reduce using rule 5 (instruction -> ILDC NUMBER .)
+    LOAD            reduce using rule 5 (instruction -> ILDC NUMBER .)
+    STORE           reduce using rule 5 (instruction -> ILDC NUMBER .)
+    $end            reduce using rule 5 (instruction -> ILDC NUMBER .)
+
+
+state 22
+
+    (14) instruction -> JZ LABEL .
+
+    LABEL           reduce using rule 14 (instruction -> JZ LABEL .)
+    ILDC            reduce using rule 14 (instruction -> JZ LABEL .)
+    IADD            reduce using rule 14 (instruction -> JZ LABEL .)
+    ISUB            reduce using rule 14 (instruction -> JZ LABEL .)
+    IMUL            reduce using rule 14 (instruction -> JZ LABEL .)
+    IDIV            reduce using rule 14 (instruction -> JZ LABEL .)
+    IMOD            reduce using rule 14 (instruction -> JZ LABEL .)
+    POP             reduce using rule 14 (instruction -> JZ LABEL .)
+    DUP             reduce using rule 14 (instruction -> JZ LABEL .)
+    SWAP            reduce using rule 14 (instruction -> JZ LABEL .)
+    JZ              reduce using rule 14 (instruction -> JZ LABEL .)
+    JNZ             reduce using rule 14 (instruction -> JZ LABEL .)
+    JMP             reduce using rule 14 (instruction -> JZ LABEL .)
+    LOAD            reduce using rule 14 (instruction -> JZ LABEL .)
+    STORE           reduce using rule 14 (instruction -> JZ LABEL .)
+    $end            reduce using rule 14 (instruction -> JZ LABEL .)
+
+
+state 23
+
+    (15) instruction -> JNZ LABEL .
+
+    LABEL           reduce using rule 15 (instruction -> JNZ LABEL .)
+    ILDC            reduce using rule 15 (instruction -> JNZ LABEL .)
+    IADD            reduce using rule 15 (instruction -> JNZ LABEL .)
+    ISUB            reduce using rule 15 (instruction -> JNZ LABEL .)
+    IMUL            reduce using rule 15 (instruction -> JNZ LABEL .)
+    IDIV            reduce using rule 15 (instruction -> JNZ LABEL .)
+    IMOD            reduce using rule 15 (instruction -> JNZ LABEL .)
+    POP             reduce using rule 15 (instruction -> JNZ LABEL .)
+    DUP             reduce using rule 15 (instruction -> JNZ LABEL .)
+    SWAP            reduce using rule 15 (instruction -> JNZ LABEL .)
+    JZ              reduce using rule 15 (instruction -> JNZ LABEL .)
+    JNZ             reduce using rule 15 (instruction -> JNZ LABEL .)
+    JMP             reduce using rule 15 (instruction -> JNZ LABEL .)
+    LOAD            reduce using rule 15 (instruction -> JNZ LABEL .)
+    STORE           reduce using rule 15 (instruction -> JNZ LABEL .)
+    $end            reduce using rule 15 (instruction -> JNZ LABEL .)
+
+
+state 24
+
+    (16) instruction -> JMP LABEL .
+
+    LABEL           reduce using rule 16 (instruction -> JMP LABEL .)
+    ILDC            reduce using rule 16 (instruction -> JMP LABEL .)
+    IADD            reduce using rule 16 (instruction -> JMP LABEL .)
+    ISUB            reduce using rule 16 (instruction -> JMP LABEL .)
+    IMUL            reduce using rule 16 (instruction -> JMP LABEL .)
+    IDIV            reduce using rule 16 (instruction -> JMP LABEL .)
+    IMOD            reduce using rule 16 (instruction -> JMP LABEL .)
+    POP             reduce using rule 16 (instruction -> JMP LABEL .)
+    DUP             reduce using rule 16 (instruction -> JMP LABEL .)
+    SWAP            reduce using rule 16 (instruction -> JMP LABEL .)
+    JZ              reduce using rule 16 (instruction -> JMP LABEL .)
+    JNZ             reduce using rule 16 (instruction -> JMP LABEL .)
+    JMP             reduce using rule 16 (instruction -> JMP LABEL .)
+    LOAD            reduce using rule 16 (instruction -> JMP LABEL .)
+    STORE           reduce using rule 16 (instruction -> JMP LABEL .)
+    $end            reduce using rule 16 (instruction -> JMP LABEL .)
+
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: reduce/reduce conflict in state 20 resolved using rule (instructions -> instructions LABEL)
+WARNING: rejected rule (instruction -> LABEL) in state 20
